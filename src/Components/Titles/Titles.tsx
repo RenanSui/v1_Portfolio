@@ -14,7 +14,11 @@ export const SmallTitle = ({ children, className }: TitleProps) => {
 
 export const ParagraphTitle = ({ children, className }: TitleProps) => {
   return (
-    <p className={`text-2xl text-custom-blue-500 ${className}`}>{children}</p>
+    <p
+      className={`text-2xl text-custom-blue-500 transition-all duration-300 md:text-4xl ${className}`}
+    >
+      {children}
+    </p>
   );
 };
 

@@ -34,11 +34,8 @@ const contactInfo: IFooterContactInfo[] = [
 
 const Footer = () => {
   return (
-    <footer
-      id=""
-      className=" relative z-10 bg-custom-blue-500 text-custom-darkBlue-900"
-    >
-      <SectionWrapper id="" className={'MouseTracker'}>
+    <footer id="" className="z-10 bg-custom-blue-500 text-custom-darkBlue-900">
+      <SectionWrapper id="footer" className={'MouseTracker mt-28 pt-8'}>
         <>
           <h1 className="FooterTitle mt-8 text-3xl font-semibold tracking-widest">
             RENAN

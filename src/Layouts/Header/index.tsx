@@ -4,8 +4,11 @@ import { SectionWrapper } from '../../Components/Wrapper';
 
 const Header = () => {
   return (
-    <>
-      <SectionWrapper id="" className="mt-16 font-josefin text-white">
+    <header>
+      <SectionWrapper
+        id="header"
+        className="mt-0 pt-36 font-josefin text-white"
+      >
         <>
           <p>Hello, I&apos;m</p>
           <p className="text-5xl">Renan Sui</p>
@@ -27,7 +30,7 @@ const Header = () => {
           </span>
         </>
       </SectionWrapper>
-    </>
+    </header>
   );
 };
 
