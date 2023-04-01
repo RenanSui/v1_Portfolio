@@ -3,7 +3,7 @@ import HandleWindowResize from './HandleWindowResize';
 
 const StarsPattern = () => {
   const [windowSizes, setWindowSize] = useState<number[]>([]);
-  const [windowWidth, windowHeight] = [windowSizes[0], windowSizes[1]];
+  const windowHeight = windowSizes[1];
   HandleWindowResize(setWindowSize);
 
   return (

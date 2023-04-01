@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ContactCardProps } from './types';
 
 const ContactCard = ({ contact }: ContactCardProps) => {
-  const { contactInformation, contactLink, contactType, icon, id } = contact;
+  const { contactInformation, contactLink, contactType, icon } = contact;
 
   return (
     <a href={contactLink} target="_blank" rel="noreferrer">
