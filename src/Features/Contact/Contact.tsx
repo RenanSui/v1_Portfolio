@@ -8,6 +8,7 @@ import { ParagraphTitle, SmallTitle } from '@/src/Components/Titles';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 import { ContactContext } from '@/src/Contexts/Contact/ContactContext';
 import { IContactPropsInfo } from '@/src/Contexts/Contact/types';
+import emailjs from '@emailjs/browser';
 import { faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { useContext, useState } from 'react';
@@ -75,7 +76,7 @@ const Contact = () => {
       message: contactState.message || '',
     };
 
-    // emailjs.send(serviceID, templateID, templateParams, publicKey);
+    emailjs.send(serviceID, templateID, templateParams, publicKey);
 
     dispatch({ type: 'changeName', payload: '' });
     dispatch({ type: 'changeEmail', payload: '' });
@@ -120,7 +121,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className={`z-10 self-start rounded-md border border-custom-blue-500 bg-custom-blue-500 px-5 py-2 text-black transition-all hover:border-white hover:bg-white`}
+              className={`z-10 rounded-md border border-custom-blue-500 bg-custom-blue-500 px-5 py-2 text-black transition-all hover:border-white hover:bg-white lg:self-start`}
             >
               Send Message
             </button>
