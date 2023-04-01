@@ -10,10 +10,10 @@ interface ITechStack {
 }
 
 export type SmallCardProps = {
-  title: String;
-  message: String;
+  title: string;
+  message: string;
   icon: IconDefinition;
-  topic: String;
+  topic: string;
 };
 
 export type BigCardProps = {

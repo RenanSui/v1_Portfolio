@@ -1,6 +1,10 @@
 import { Dispatch } from 'react';
 
-export interface IContactState { name: string, email: string, message: string };
+export interface IContactState {
+  name: string;
+  email: string;
+  message: string;
+}
 
 export interface IContactPropsInfo {
   id: number | string;
@@ -12,8 +16,7 @@ export interface IContactPropsInfo {
 export type ACTIONTYPE =
   | { type: 'changeName'; payload: string }
   | { type: 'changeEmail'; payload: string }
-  | { type: 'changeMessage'; payload: string }
-;
+  | { type: 'changeMessage'; payload: string };
 
 export type ContactContextProps = {
   contactState: IContactState;

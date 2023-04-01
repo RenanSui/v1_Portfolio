@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { FC, useReducer } from 'react';
 import { ContactContext } from './ContactContext';
 import { reducer } from './ContactReducer';

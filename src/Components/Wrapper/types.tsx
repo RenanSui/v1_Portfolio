@@ -1,5 +1,5 @@
 export type SectionWrapperProps = {
   children: string | JSX.Element | JSX.Element[];
-  className?: String;
+  className?: string;
   id: string;
 };

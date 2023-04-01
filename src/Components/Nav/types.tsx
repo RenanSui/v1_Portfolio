@@ -4,8 +4,8 @@ export interface INavList {
   id: number;
   titleName: string;
   icon: IconDefinition;
-  active: Boolean;
-  hrefLink: String;
+  active: boolean;
+  hrefLink: string;
 }
 
 export type NavListProps = { navItem: INavList };

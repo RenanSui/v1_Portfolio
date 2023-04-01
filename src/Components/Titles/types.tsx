@@ -6,5 +6,5 @@ export type TestTitleProps = {
 
 export type TitleProps = {
   children: string | JSX.Element | JSX.Element[];
-  className?: String;
+  className?: string;
 };

@@ -2,8 +2,7 @@ import { SmallPrimaryButton, SmallTransparentButton } from '../Button';
 import { ProjectCardProps } from './types';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { description, githubLink, liveDemoLink, name, imagePreview } =
-    project;
+  const { description, githubLink, liveDemoLink, name, imagePreview } = project;
 
   return (
     <article className="screeeen group relative z-10 flex w-[300px] flex-col justify-between overflow-hidden rounded-2xl border border-custom-blue-900 bg-custom-blue-900 p-4 transition-all duration-300 hover:bg-transparent xs:w-[380px]">

@@ -1,9 +1,9 @@
 import {
+  faBolt,
+  faBriefcase,
+  faEnvelope,
   faHouse,
   faUser,
-  faEnvelope,
-  faBriefcase,
-  faBolt
 } from '@fortawesome/free-solid-svg-icons';
 import NavListItems from './NavListItems';
 import { INavList } from './types';
@@ -49,7 +49,7 @@ const navList: INavList[] = [
 const FloatingNavbar = () => {
   return (
     <nav className="fixed bottom-8 left-1/2 z-50 -translate-x-1/2 rounded-full bg-transparent-30 backdrop-blur-lg transition-all duration-500">
-      <ul className="flex py-1 px-5 transition-all duration-500 xs:py-3 xs:px-7">
+      <ul className="flex px-5 py-1 transition-all duration-500 xs:px-7 xs:py-3">
         {navList.map((navItem) => (
           <NavListItems navItem={navItem} key={navItem.id} />
         ))}

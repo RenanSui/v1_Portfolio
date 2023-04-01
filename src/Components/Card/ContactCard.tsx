@@ -5,7 +5,7 @@ const ContactCard = ({ contact }: ContactCardProps) => {
   const { contactInformation, contactLink, contactType, icon, id } = contact;
 
   return (
-    <a href={contactLink} target="_blank">
+    <a href={contactLink} target="_blank" rel="noreferrer">
       <article className="relative z-10 flex h-[180px] w-[300px] cursor-pointer flex-col items-center justify-center rounded-xl border border-custom-blue-900 bg-custom-blue-900 transition-all duration-300 hover:bg-transparent xs:w-[380px] md:h-[200px]">
         <FontAwesomeIcon
           icon={icon}
