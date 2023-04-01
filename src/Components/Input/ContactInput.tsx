@@ -22,5 +22,5 @@ const ContactInput = ({ inputLabel }: ContactInputProps) => {
     />
   );
 };
-// w-[300px]
+
 export default ContactInput;

@@ -1,3 +1,4 @@
+'use client';
 import { ContactCard } from '@/src/Components/Card';
 import { IContactInfo } from '@/src/Components/Card/types';
 import { ContactInput } from '@/src/Components/Input';
@@ -5,9 +6,12 @@ import { ContactLabel } from '@/src/Components/Label';
 import { ContactTextarea } from '@/src/Components/Textarea';
 import { ParagraphTitle, SmallTitle } from '@/src/Components/Titles';
 import { SectionWrapper } from '@/src/Components/Wrapper';
+import { ContactContext } from '@/src/Contexts/Contact/ContactContext';
 import { IContactPropsInfo } from '@/src/Contexts/Contact/types';
+import emailjs from '@emailjs/browser';
 import { faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { useContext } from 'react';
 
 const contactInfo: IContactInfo[] = [
   {
@@ -56,7 +60,26 @@ const INPUT_LABEL: IContactPropsInfo[] = [
 ];
 
 const Contact = () => {
-  // const { contactState } = useContext(ContactContext);
+  const { contactState, dispatch } = useContext(ContactContext);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const serviceID = 'service_b6fdcqg';
+    const templateID = 'template_g24nnoh';
+    const publicKey = 'mRgUP38HcWu9AM0rY';
+    const templateParams = {
+      name: contactState.name || '',
+      email: contactState.email || '',
+      message: contactState.message || '',
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, publicKey);
+
+    dispatch({ type: 'changeName', payload: '' });
+    dispatch({ type: 'changeEmail', payload: '' });
+    dispatch({ type: 'changeMessage', payload: '' });
+  };
 
   return (
     <SectionWrapper id="contact" className="">
@@ -71,11 +94,10 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* <h1 className="text-white">{contactState.name || 'Name'}</h1>
-        <h1 className="text-white">{contactState.email || 'Email'}</h1>
-        <h1 className="text-white">{contactState.message || 'Message'}</h1> */}
-
-          <form className="relative mx-3 mt-4 flex flex-col items-center gap-4 rounded-md text-custom-gray-100 transition-all duration-700">
+          <form
+            className="relative mx-3 mt-4 flex flex-col items-center gap-4 rounded-md text-custom-gray-100 transition-all duration-700"
+            onSubmit={(e) => sendEmail(e)}
+          >
             {INPUT_LABEL.map((inputLabel) => (
               <div
                 className="relative flex w-full max-w-[300px] justify-center transition-all duration-700 xs:max-w-[380px]"
@@ -91,6 +113,7 @@ const Contact = () => {
             ))}
 
             <button
+              type="submit"
               className={`z-10 self-start rounded-md border border-custom-blue-500 bg-custom-blue-500 px-5 py-2 text-black transition-all hover:border-white hover:bg-white`}
             >
               Send Message
