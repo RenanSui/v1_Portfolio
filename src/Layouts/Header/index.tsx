@@ -18,7 +18,7 @@ const Header = () => {
           </span>
           <span className="mx-5">
             <Image
-              src={'/assets/images/pfp2.png'}
+              src="/Assets/Images/pfp2.png"
               alt="Renan Sui's photo"
               width={500}
               height={500}

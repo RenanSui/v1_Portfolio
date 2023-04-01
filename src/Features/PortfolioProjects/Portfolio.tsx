@@ -10,7 +10,7 @@ const Projects: IProjects[] = [
     description: 'Weather App with search option calling an external rest-API.',
     githubLink: 'https://github.com/RenanSui/weather-app',
     liveDemoLink: 'https://ren-weatherapp.vercel.app',
-    imagePreview: 'bg-[url(/assets/images/portfolio1.png)]',
+    imagePreview: 'bg-[url(/Assets/Images/portfolio1.png)]',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const Projects: IProjects[] = [
     description: 'Expense Tracker with CRUD-functionality.',
     githubLink: 'https://github.com/RenanSui/expense-tracker',
     liveDemoLink: 'https://renansui.github.io/expense-tracker/',
-    imagePreview: 'bg-[url(/assets/images/portfolio2.png)]',
+    imagePreview: 'bg-[url(/Assets/Images/portfolio2.png)]',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const Projects: IProjects[] = [
     description: 'A Todolist app with basic CRUD-functionality.',
     githubLink: 'https://github.com/RenanSui/todoList',
     liveDemoLink: 'https://ren-todolist.vercel.app',
-    imagePreview: 'bg-[url(/assets/images/portfolio3.png)]',
+    imagePreview: 'bg-[url(/Assets/Images/portfolio3.png)]',
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const Projects: IProjects[] = [
       "Pokédex where users can infinite scroll down the page or search for a Pokémon name or it's number and access their information.",
     githubLink: 'https://github.com/RenanSui/pokedex',
     liveDemoLink: 'https://ren-pokedex.vercel.app',
-    imagePreview: 'bg-[url(/assets/images/portfolio4.png)]',
+    imagePreview: 'bg-[url(/Assets/Images/portfolio4.png)]',
   },
 ];
 

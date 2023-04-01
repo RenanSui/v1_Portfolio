@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import { PrimaryButton } from '@/src/Components/Button';
 import { SmallCard } from '@/src/Components/Card';
-import { SmallTitle, ParagraphTitle } from '@/src/Components/Titles';
+import { ParagraphTitle, SmallTitle } from '@/src/Components/Titles';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 import { faAward, faDesktop } from '@fortawesome/free-solid-svg-icons';
-
+import Image from 'next/image';
 
 const About = () => {
   return (
@@ -18,14 +17,14 @@ const About = () => {
       <div className="flex flex-col items-center justify-center lg:flex-row">
         <div className="group relative mt-14 flex justify-center lg:ml-8">
           <Image
-            src={'/assets/images/bgpfp2.png'}
+            src="/Assets/Images/bgpfp2.png"
             alt="Background anime photo"
             width={1024}
             height={1024}
             className="w-[260px] select-none rounded-[50px] transition-all xs:w-[300px] sm:w-[360px] lg:w-[500px]"
           />
           <Image
-            src={'/assets/images/pfp2.png'}
+            src="/Assets/Images/pfp2.png"
             alt="Renan Sui's photo"
             width={1024}
             height={1024}

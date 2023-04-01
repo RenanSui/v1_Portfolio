@@ -2,7 +2,7 @@ import { SmallPrimaryButton, SmallTransparentButton } from '../Button';
 import { ProjectCardProps } from './types';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  const { description, githubLink, id, liveDemoLink, name, imagePreview } =
+  const { description, githubLink, liveDemoLink, name, imagePreview } =
     project;
 
   return (

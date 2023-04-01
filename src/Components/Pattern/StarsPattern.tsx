@@ -8,7 +8,7 @@ const StarsPattern = () => {
 
   return (
     <div
-      className='pointer-events-none absolute top-0 left-0 right-0 bg-[url("/Assets/images/seamless-pattern.jpg")] opacity-20'
+      className='pointer-events-none absolute left-0 right-0 top-0 bg-[url("/Assets/Images/seamless-pattern.jpg")] opacity-20'
       style={{ height: windowHeight }}
     />
   );
