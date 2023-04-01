@@ -8,10 +8,10 @@ import { ParagraphTitle, SmallTitle } from '@/src/Components/Titles';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 import { ContactContext } from '@/src/Contexts/Contact/ContactContext';
 import { IContactPropsInfo } from '@/src/Contexts/Contact/types';
-import emailjs from '@emailjs/browser';
 import { faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { MessageSendAlert } from '../Alert';
 
 const contactInfo: IContactInfo[] = [
   {
@@ -61,6 +61,7 @@ const INPUT_LABEL: IContactPropsInfo[] = [
 
 const Contact = () => {
   const { contactState, dispatch } = useContext(ContactContext);
+  const [isSended, setIsSended] = useState(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,15 +75,20 @@ const Contact = () => {
       message: contactState.message || '',
     };
 
-    emailjs.send(serviceID, templateID, templateParams, publicKey);
+    // emailjs.send(serviceID, templateID, templateParams, publicKey);
 
     dispatch({ type: 'changeName', payload: '' });
     dispatch({ type: 'changeEmail', payload: '' });
     dispatch({ type: 'changeMessage', payload: '' });
+
+    setIsSended(true);
+    setTimeout(() => {
+      setIsSended(false);
+    }, 3000);
   };
 
   return (
-    <SectionWrapper id="contact" className="">
+    <SectionWrapper id="contact" className="relative">
       <>
         <SmallTitle>Get in Touch</SmallTitle>
         <ParagraphTitle>Contact Me</ParagraphTitle>
@@ -118,6 +124,9 @@ const Contact = () => {
             >
               Send Message
             </button>
+            <div className="text-2xl text-white">
+              {isSended && <MessageSendAlert />}
+            </div>
           </form>
         </div>
       </>

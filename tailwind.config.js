@@ -29,6 +29,17 @@ module.exports = {
       xs: '414px',
       ...defaultTheme.screens,
     },
+    animation: {
+      'alert-error': 'alertError 3s cubic-bezier(.24,.24,0,1)',
+    },
+    keyframes: {
+      alertError: {
+        '0%': { top: '-208px' },
+        '80%': { top: '50px', opacity: 1 },
+        '95%': { top: '250px', opacity: 0 },
+        '100%': { top: '-208px', opacity: 0 },
+      },
+    },
   },
   plugins: [],
 };
