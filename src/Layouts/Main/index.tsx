@@ -8,18 +8,18 @@ import { Portfolio } from '@/src/Features/PortfolioProjects';
 // import { Testimonials } from '../Testimonials';
 
 const Main = () => {
-  return (
-    <main className="font-josefin">
-      <About />
-      <Experience />
-      {/* <Services /> */}
-      <Portfolio />
-      {/* <Testimonials /> */}
-      <ContactProvider>
-        <Contact />
-      </ContactProvider>
-    </main>
-  );
+	return (
+		<main className="font-josefin">
+			<About />
+			<Experience />
+			{/* <Services /> */}
+			<Portfolio />
+			{/* <Testimonials /> */}
+			<ContactProvider>
+				<Contact />
+			</ContactProvider>
+		</main>
+	);
 };
 
 export default Main;

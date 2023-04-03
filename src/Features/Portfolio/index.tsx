@@ -6,16 +6,16 @@ import Main from '@/src/Layouts/Main';
 import { MouseTracker } from '../MouseTracker';
 
 const Portfolio = () => {
-  return (
-    <>
-      <MouseTracker />
-      <StarsPattern />
-      <FloatingNavbar />
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<MouseTracker />
+			<StarsPattern />
+			<FloatingNavbar />
+			<Header />
+			<Main />
+			<Footer />
+		</>
+	);
 };
 
 export default Portfolio;
