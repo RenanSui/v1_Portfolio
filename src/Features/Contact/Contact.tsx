@@ -2,15 +2,16 @@
 import { Button } from '@/src/Components/Button';
 import { ContactCard } from '@/src/Components/Card';
 import { IContactInfo } from '@/src/Components/Card/types';
+import { FormField } from '@/src/Components/Forms/FormField';
+import { GroupForm } from '@/src/Components/Forms/GroupForm';
 import { Heading } from '@/src/Components/Heading';
-import { ContactInput } from '@/src/Components/Input';
-import { ContactLabel } from '@/src/Components/Label';
+import { Input } from '@/src/Components/Input';
+import { Label } from '@/src/Components/Label';
 import { Paragraph } from '@/src/Components/Paragraph';
-import { ContactTextarea } from '@/src/Components/Textarea';
+import { TextArea } from '@/src/Components/Textarea';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 import { ContactContext } from '@/src/Contexts/Contact/ContactContext';
-import { IContactPropsInfo } from '@/src/Contexts/Contact/types';
-import emailjs from '@emailjs/browser';
+import { SendEmail } from '@/src/Utilities/SendEmail';
 import { faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { useContext, useState } from 'react';
@@ -41,48 +42,15 @@ const contactInfo: IContactInfo[] = [
 	},
 ];
 
-const INPUT_LABEL: IContactPropsInfo[] = [
-	{
-		id: 1,
-		type: 'name',
-		actionType: 'changeName',
-		labelPlaceholder: 'Your Full Name',
-	},
-	{
-		id: 2,
-		type: 'email',
-		actionType: 'changeEmail',
-		labelPlaceholder: 'Your Email',
-	},
-	{
-		id: 3,
-		type: 'message',
-		actionType: 'changeMessage',
-		labelPlaceholder: 'Your Message',
-	},
-];
-
 const Contact = () => {
-	const { contactState, dispatch } = useContext(ContactContext);
 	const [isSended, setIsSended] = useState(false);
+	const { contactState, dispatch } = useContext(ContactContext);
 
-	const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
-		const serviceID = 'service_b6fdcqg';
-		const templateID = 'template_g24nnoh';
-		const publicKey = 'mRgUP38HcWu9AM0rY';
-		const templateParams = {
-			name: contactState.name || '',
-			email: contactState.email || '',
-			message: contactState.message || '',
-		};
-
-		emailjs.send(serviceID, templateID, templateParams, publicKey);
-
-		dispatch({ type: 'changeName', payload: '' });
-		dispatch({ type: 'changeEmail', payload: '' });
-		dispatch({ type: 'changeMessage', payload: '' });
+		SendEmail(contactState);
+		dispatch({ type: 'resetForm' });
 
 		setIsSended(true);
 		setTimeout(() => {
@@ -92,46 +60,38 @@ const Contact = () => {
 
 	return (
 		<SectionWrapper id="contact" className="relative">
-			<>
-				<Paragraph variant={'gray'}>Get in Touch</Paragraph>
-				<Heading variant={'primary'} size={'lg'}>
-					Contact Me
-				</Heading>
+			<Paragraph variant={'gray'}>Get in Touch</Paragraph>
+			<Heading variant={'primary'} size={'lg'}>
+				Contact Me
+			</Heading>
 
-				<div className="lg:flex">
-					<div className="my-4 flex flex-wrap justify-center gap-4 transition-all duration-700 lg:mx-5 lg:flex-col">
-						{contactInfo.map((contact) => (
-							<ContactCard key={contact.id} contact={contact} />
-						))}
-					</div>
-
-					<form
-						className="relative mx-3 mt-4 flex flex-col items-center gap-4 rounded-md text-custom-gray-100 transition-all duration-700"
-						onSubmit={(e) => sendEmail(e)}
-					>
-						{INPUT_LABEL.map((inputLabel) => (
-							<div
-								className="relative flex w-full max-w-[300px] justify-center transition-all duration-700 xs:max-w-[380px]"
-								key={inputLabel.id}
-							>
-								{inputLabel.type === 'message' ? (
-									<ContactTextarea inputLabel={inputLabel} />
-								) : (
-									<ContactInput inputLabel={inputLabel} />
-								)}
-								<ContactLabel inputLabel={inputLabel} />
-							</div>
-						))}
-
-						<Button variant={'primary'} type="submit">
-							Send Message
-						</Button>
-						<div className="text-2xl text-white">
-							{isSended && <MessageSendAlert />}
-						</div>
-					</form>
+			<div className="lg:flex">
+				<div className="my-4 flex flex-wrap justify-center gap-4 transition-all duration-700 lg:mx-5 lg:flex-col">
+					{contactInfo.map((contact) => (
+						<ContactCard key={contact.id} contact={contact} />
+					))}
 				</div>
-			</>
+
+				<GroupForm onSubmit={handleSubmit}>
+					<FormField>
+						<Input type="name" actionType="changeName" />
+						<Label htmlFor="name">Your Full Name</Label>
+					</FormField>
+					<FormField>
+						<Input type="email" actionType="changeEmail" />
+						<Label htmlFor="email">Your Email</Label>
+					</FormField>
+					<FormField>
+						<TextArea type="message" actionType="changeMessage" />
+						<Label htmlFor="message">Your Message</Label>
+					</FormField>
+
+					<Button variant={'primary'} type="submit">
+						Send Message
+					</Button>
+				</GroupForm>
+				{isSended && <MessageSendAlert />}
+			</div>
 		</SectionWrapper>
 	);
 };

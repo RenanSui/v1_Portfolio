@@ -1,2 +1,3 @@
 'use client';
-export { default as ContactTextarea } from './ContactTextarea';
+export * from './TextArea';
+export { default as TextArea } from './TextArea';

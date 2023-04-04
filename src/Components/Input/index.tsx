@@ -1,2 +1,3 @@
 'use client';
-export { default as ContactInput } from './ContactInput';
+export * from './Input';
+export { default as Input } from './Input';

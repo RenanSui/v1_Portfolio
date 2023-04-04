@@ -8,6 +8,8 @@ export const reducer = (state: IContactState, action: ACTIONTYPE) => {
 			return { ...state, email: action.payload };
 		case 'changeMessage':
 			return { ...state, message: action.payload };
+		case 'resetForm':
+			return { ...state, name: '', email: '', message: '' };
 		default:
 			return state;
 	}

@@ -1,2 +1,3 @@
 'use client';
-export { default as ContactLabel } from './ContactLabel';
+export * from './Label';
+export { default as Label } from './Label';

@@ -16,7 +16,8 @@ export interface IContactPropsInfo {
 export type ACTIONTYPE =
 	| { type: 'changeName'; payload: string }
 	| { type: 'changeEmail'; payload: string }
-	| { type: 'changeMessage'; payload: string };
+	| { type: 'changeMessage'; payload: string }
+	| { type: 'resetForm' };
 
 export type ContactContextProps = {
 	contactState: IContactState;
