@@ -1,11 +1,10 @@
 import { Anchor } from '@/src/Components/Anchor';
 import { Card } from '@/src/Components/Card';
-import { IProjects } from '@/src/Components/Card/types';
 import { Heading } from '@/src/Components/Heading';
 import { Paragraph } from '@/src/Components/Paragraph';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 
-const Projects: IProjects[] = [
+const Projects = [
 	{
 		id: 1,
 		name: 'Weather App',
