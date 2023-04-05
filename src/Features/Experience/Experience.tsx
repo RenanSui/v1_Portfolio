@@ -34,12 +34,12 @@ const Experience = () => {
 				>
 					Frontend Development
 				</Heading>
-				<div className="flex flex-wrap justify-around">
+				<div className="flex flex-wrap justify-center">
 					{TechStack.map((stack) => {
 						return (
 							<div
 								key={stack.id}
-								className="my-2 flex w-[150px] flex-wrap self-start"
+								className="my-4 flex w-[150px] flex-wrap self-start"
 							>
 								<Icon
 									icon={faCircleCheck}
