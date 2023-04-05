@@ -13,11 +13,13 @@ const headingVariants = cva('transition-all duration-300', {
 		},
 		size: {
 			default: 'text-xl',
+			base: 'text-base',
 			lg: 'text-2xl md:text-4xl',
 			xl_5: 'text-5xl',
 			xl_3: 'text-3xl',
 		},
 	},
+
 	defaultVariants: {
 		variant: 'default',
 		size: 'default',

@@ -1,5 +1,7 @@
 export * from './BigCard';
 export { default as BigCard } from './BigCard';
+export * from './Card';
+export { default as Card } from './Card';
 export * from './ContactCard';
 export { default as ContactCard } from './ContactCard';
 export * from './ProjectCard';

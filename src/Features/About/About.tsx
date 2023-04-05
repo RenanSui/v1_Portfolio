@@ -1,10 +1,12 @@
 import { Anchor } from '@/src/Components/Anchor';
-import { SmallCard } from '@/src/Components/Card';
+import { Card } from '@/src/Components/Card';
 import { Heading } from '@/src/Components/Heading';
+import { Icon } from '@/src/Components/Icons';
 import { Paragraph } from '@/src/Components/Paragraph';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 import { faAward, faDesktop } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import { FC } from 'react';
 
 const About = () => {
 	return (
@@ -37,50 +39,67 @@ const About = () => {
 
 				<div className="relative flex flex-col transition-all lg:ml-12 lg:mr-8">
 					<div className="mt-16 flex flex-wrap justify-center gap-4 md:justify-start">
-						<SmallCard
-							title={'Experience'}
-							topic={'experience'}
-							message={'3+ Years Studying'}
-							icon={faAward}
-						/>
-						<SmallCard
-							title={'Projects'}
-							topic={'portfolio'}
-							message={'5+ Completed'}
-							icon={faDesktop}
-						/>
+						<Anchor href="#experience">
+							<Card
+								variant={'center'}
+								size={'small'}
+								className="CardLeftPixelEffect p-6"
+							>
+								<Icon
+									icon={faAward}
+									className="h-6 w-6 text-custom-blue-500"
+								/>
+								<Heading>Experience</Heading>
+								<Paragraph variant={'gray'}>
+									3+ Years Studying
+								</Paragraph>
+							</Card>
+						</Anchor>
+						<Anchor href="#portfolio">
+							<Card
+								variant={'center'}
+								size={'small'}
+								className="CardLeftPixelEffect p-6"
+							>
+								<Icon
+									icon={faDesktop}
+									className="h-6 w-6 text-custom-blue-500"
+								/>
+								<Heading>Projects</Heading>
+								<Paragraph variant={'gray'}>
+									5+ Completed
+								</Paragraph>
+							</Card>
+						</Anchor>
 					</div>
 
-					<p className="group mx-3 mb-3 mt-3 max-w-[35em] text-justify text-sm font-light text-white transition-all duration-300 hover:text-custom-blue-400 md:mx-0 md:mb-6 md:mt-6 md:max-w-[43em] md:text-base">
+					<Paragraph
+						variant={'default'}
+						size={'default'}
+						className="group mx-3 my-3 max-w-[35em] text-justify font-light transition-all duration-300 hover:text-custom-blue-400 md:mx-0 md:max-w-[43em] md:text-base"
+					>
 						Not so recently (2020) I started my self-taught journey
-						studying front-end development and I&apos;m currently
-						learning React/Next.js. Already having a basic
-						understanding of programming (game development in 2019),
-						I immersed myself in this sea of technologies and
-						libraries and found myself taking a liking to the design
-						and interactivity of websites.
-						<span className="block transition-all duration-300">
-							Check out my{' '}
-							<ExternalLink href="https://www.github.com/RenanSui">
-								Github
-							</ExternalLink>{' '}
-							profile
-						</span>
-						<span className="transition-all duration-300">
-							Also my{' '}
-							<ExternalLink href="https://www.linkedin.com/in/renansui/">
-								Linkedin
-							</ExternalLink>
-						</span>
-					</p>
-					<span>
-						{/* <PrimaryButton href="#contact" className="">
-							Let&apos;s Talk
-						</PrimaryButton> */}
-						<Anchor variant={'primary'} href="#contact">
-							Let&apos;s Talk
-						</Anchor>
-					</span>
+						studying <Emphasize> frontend </Emphasize> development
+						and I&apos;m currently learning
+						<Emphasize> React/Next.js</Emphasize>. Already having a
+						basic understanding of programming (game development in
+						2019), I immersed myself in this sea of technologies and
+						libraries and found myself taking a liking to the
+						<Emphasize>
+							{' '}
+							design and interactivity of websites
+						</Emphasize>
+						.
+					</Paragraph>
+
+					<Anchor
+						href="#contact"
+						variant={'primary'}
+						size={'sm'}
+						className="self-start"
+					>
+						Let&apos;s Talk
+					</Anchor>
 				</div>
 			</div>
 		</SectionWrapper>
@@ -89,23 +108,17 @@ const About = () => {
 
 export default About;
 
-const ExternalLink = ({
-	children,
-	href,
-	className,
-}: {
-	children: string | JSX.Element | JSX.Element[];
-	href: string;
-	className?: string;
-}) => {
+interface EmphasizeProps extends React.HTMLAttributes<HTMLSpanElement> {
+	children?: string | JSX.Element | JSX.Element[] | (string | JSX.Element)[];
+}
+
+export const Emphasize: FC<EmphasizeProps> = ({ children, ...props }) => {
 	return (
-		<a
-			href={href}
-			target="_blank"
-			rel="noreferrer"
-			className={`cursor-pointer font-light text-custom-blue-400 transition-all duration-300 group-hover:text-white ${className}`}
+		<span
+			{...props}
+			className="text-custom-blue-400 transition-all duration-300 group-hover:text-white"
 		>
 			{children}
-		</a>
+		</span>
 	);
 };

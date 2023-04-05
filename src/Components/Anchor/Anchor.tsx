@@ -7,15 +7,16 @@ const anchorVariants = cva(
 	{
 		variants: {
 			variant: {
-				default: 'text-white bg-black hover:text-black hover:bg-white',
+				default: '',
 				primary:
-					'bg-custom-blue-500 text-black hover:bg-custom-blue-800 hover:text-white',
+					'bg-custom-blue-500 text-black hover:bg-custom-blue-800 hover:text-white rounded-md',
 				outline:
-					'bg-transparent border text-custom-blue-300 border-custom-blue-300 hover:bg-custom-blue-800 hover:text-white hover:border-custom-blue-800',
+					'bg-transparent border text-custom-blue-300 border-custom-blue-300 hover:bg-custom-blue-800 hover:text-white hover:border-custom-blue-800 rounded-md',
 			},
 			size: {
-				default: 'px-6 py-5',
+				default: '',
 				sm: 'px-5 py-3',
+				md: 'px-6 py-5',
 			},
 		},
 		defaultVariants: {
@@ -42,7 +43,6 @@ const Anchor: FC<AnchorProps> = ({
 }) => {
 	return (
 		<a
-			target=""
 			className={mergeClass(anchorVariants({ variant, size, className }))}
 			{...props}
 		>

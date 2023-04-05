@@ -1,14 +1,14 @@
 import emailjs from '@emailjs/browser';
 import { IContactState } from '../Contexts/Contact/types';
 
-export const SendEmail = (contactState: IContactState) => {
+export const SendEmail = ({ name, email, message }: IContactState) => {
 	const serviceID = 'service_b6fdcqg';
 	const templateID = 'template_g24nnoh';
 	const publicKey = 'mRgUP38HcWu9AM0rY';
 	const templateParams = {
-		name: contactState.name || '',
-		email: contactState.email || '',
-		message: contactState.message || '',
+		name: name || '',
+		email: email || '',
+		message: message || '',
 	};
 
 	emailjs.send(serviceID, templateID, templateParams, publicKey);

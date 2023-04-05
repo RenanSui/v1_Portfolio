@@ -11,9 +11,7 @@ const Header = () => {
 				id="header"
 				className="mt-0 pt-36 font-josefin text-white"
 			>
-				<Paragraph variant={'default'} size={'base'}>
-					Hello, I&apos;m
-				</Paragraph>
+				<Paragraph size={'base'}>Hello, I&apos;m</Paragraph>
 				<Heading size={'xl_5'}>Renan Sui</Heading>
 				<Paragraph variant={'secondary'} size={'base'}>
 					Frontend Developer
@@ -22,12 +20,14 @@ const Header = () => {
 				<div className="mt-8">
 					<Anchor
 						variant={'outline'}
+						size={'md'}
 						href="https://cdn.discordapp.com/attachments/946119540356575343/1090621020278358088/Profile.pdf"
 					>
 						Download CV
 					</Anchor>
 					<Anchor
 						variant={'primary'}
+						size={'md'}
 						href="#contact"
 						className="ml-4"
 					>

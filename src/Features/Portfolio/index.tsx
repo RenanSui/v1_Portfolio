@@ -8,12 +8,12 @@ import { MouseTracker } from '../MouseTracker';
 const Portfolio = () => {
 	return (
 		<>
-			<MouseTracker />
-			<StarsPattern />
 			<FloatingNavbar />
 			<Header />
 			<Main />
 			<Footer />
+			<MouseTracker />
+			<StarsPattern />
 		</>
 	);
 };

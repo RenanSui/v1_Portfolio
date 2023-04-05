@@ -1,10 +1,11 @@
 'use client';
+import { Anchor } from '@/src/Components/Anchor';
 import { Button } from '@/src/Components/Button';
-import { ContactCard } from '@/src/Components/Card';
-import { IContactInfo } from '@/src/Components/Card/types';
+import { Card } from '@/src/Components/Card';
 import { FormField } from '@/src/Components/Forms/FormField';
 import { GroupForm } from '@/src/Components/Forms/GroupForm';
 import { Heading } from '@/src/Components/Heading';
+import { Icon } from '@/src/Components/Icons/';
 import { Input } from '@/src/Components/Input';
 import { Label } from '@/src/Components/Label';
 import { Paragraph } from '@/src/Components/Paragraph';
@@ -12,35 +13,10 @@ import { TextArea } from '@/src/Components/Textarea';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 import { ContactContext } from '@/src/Contexts/Contact/ContactContext';
 import { SendEmail } from '@/src/Utilities/SendEmail';
-import { faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { useContext, useState } from 'react';
 import { MessageSendAlert } from '../Alert';
-
-const contactInfo: IContactInfo[] = [
-	{
-		id: 1,
-		icon: faEnvelope,
-		contactType: 'Email',
-		contactInformation: 'renanddtao@gmail.com',
-		contactLink: 'mailto: renanddtao@gmail.com',
-	},
-	{
-		id: 2,
-		icon: faLinkedinIn,
-		contactType: 'Linkedin',
-		contactInformation: 'renansui',
-		contactLink: 'https://www.linkedin.com/in/renansui/',
-	},
-	{
-		id: 3,
-		icon: faWhatsapp,
-		contactType: 'Whatsapp',
-		contactInformation: '+55 71 9 8503 5606',
-		contactLink:
-			'https://api.whatsapp.com/send?phone=+5571985035606&text=Hello',
-	},
-];
 
 const Contact = () => {
 	const [isSended, setIsSended] = useState(false);
@@ -67,9 +43,57 @@ const Contact = () => {
 
 			<div className="lg:flex">
 				<div className="my-4 flex flex-wrap justify-center gap-4 transition-all duration-700 lg:mx-5 lg:flex-col">
-					{contactInfo.map((contact) => (
-						<ContactCard key={contact.id} contact={contact} />
-					))}
+					<Anchor href="mailto: renanddtao@gmail.com" target="_blank">
+						<Card variant={'center'} className="gap-1 p-6">
+							<Icon
+								icon={faEnvelope}
+								className="my-3 text-white"
+							></Icon>
+							<Heading size={'base'}>Email</Heading>
+							<Paragraph size={'base'} variant={'gray'}>
+								renanddtao@gmail.com
+							</Paragraph>
+							<Paragraph size={'base'} variant={'primary'}>
+								Send a message
+							</Paragraph>
+						</Card>
+					</Anchor>
+					<Anchor
+						href="https://www.linkedin.com/in/renansui/"
+						target="_blank"
+					>
+						<Card variant={'center'} className="gap-1 p-6">
+							<Icon
+								icon={faLinkedinIn}
+								className="my-3 text-white"
+							></Icon>
+							<Heading size={'base'}>Linkedin</Heading>
+							<Paragraph size={'base'} variant={'gray'}>
+								renansui
+							</Paragraph>
+							<Paragraph size={'base'} variant={'primary'}>
+								Send a message
+							</Paragraph>
+						</Card>
+					</Anchor>
+					<Anchor
+						href="https://api.whatsapp.com/send?phone=+5571985035606&text=Hello"
+						target="_blank"
+					>
+						<Card variant={'center'} className="gap-1 p-6">
+							<Icon
+								icon={faEnvelope}
+								className="my-3 text-white"
+							></Icon>
+							<Heading size={'base'}>Whatsapp</Heading>
+							<Paragraph size={'base'} variant={'gray'}>
+								+55 71 9 8503 5606
+							</Paragraph>
+							<Paragraph size={'base'} variant={'primary'}>
+								Send a message
+							</Paragraph>
+						</Card>
+					</Anchor>
 				</div>
 
 				<GroupForm onSubmit={handleSubmit}>
@@ -90,6 +114,7 @@ const Contact = () => {
 						Send Message
 					</Button>
 				</GroupForm>
+
 				{isSended && <MessageSendAlert />}
 			</div>
 		</SectionWrapper>

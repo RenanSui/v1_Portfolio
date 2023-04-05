@@ -26,7 +26,7 @@ const paragraphVariants = cva('transition-all duration-300', {
 interface ParagraphProps
 	extends React.HTMLAttributes<HTMLDivElement>,
 		VariantProps<typeof paragraphVariants> {
-	children?: string | JSX.Element | JSX.Element[];
+	children?: string | JSX.Element | JSX.Element[] | (string | JSX.Element)[];
 }
 
 const Paragraph: FC<ParagraphProps> = ({

@@ -6,7 +6,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 		project;
 
 	return (
-		<article className="screeeen group relative z-10 flex w-[300px] flex-col justify-between overflow-hidden rounded-2xl border border-custom-blue-900 bg-custom-blue-900 p-4 transition-all duration-300 hover:bg-transparent xs:w-[380px]">
+		<article className="group relative z-10 flex w-[300px] flex-col justify-between overflow-hidden rounded-2xl border border-custom-blue-900 bg-custom-blue-900 p-4 transition-all duration-300 hover:bg-transparent xs:w-[380px]">
 			<div className="screen-overlay hidden transition-all duration-1000 group-hover:block" />
 			<h1 className="hidden">{name}</h1>
 			<a

@@ -12,9 +12,7 @@ const Main = () => {
 		<main className="font-josefin">
 			<About />
 			<Experience />
-			{/* <Services /> */}
 			<Portfolio />
-			{/* <Testimonials /> */}
 			<ContactProvider>
 				<Contact />
 			</ContactProvider>

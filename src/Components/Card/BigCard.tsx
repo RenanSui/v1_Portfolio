@@ -4,6 +4,7 @@ import { BigCardProps } from './types';
 
 const BigCard = ({ title, techStack, icon }: BigCardProps) => {
 	return (
+		// max-w-[500px]
 		<section className="CardLeftPixelEffect z-10 mx-2 flex max-w-[500px] cursor-default flex-col items-center justify-center rounded-xl border border-custom-blue-900 bg-custom-blue-900 pb-4 transition-all duration-300 hover:bg-transparent xs:mx-3">
 			<Heading variant={'primary'} size={'default'} className="mb-4 mt-8">
 				{title}
