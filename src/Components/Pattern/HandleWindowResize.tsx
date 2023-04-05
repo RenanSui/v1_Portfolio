@@ -11,10 +11,19 @@ const HandleWindowResize = (
 			]);
 		};
 
+		const windowScroll = () => {
+			setWindowSize([
+				window.innerWidth,
+				window.document.body.offsetHeight,
+			]);
+		};
+
 		window.addEventListener('resize', windowResize);
+		window.addEventListener('scroll', windowScroll);
 
 		return () => {
 			window.removeEventListener('resize', windowResize);
+			window.removeEventListener('scroll', windowScroll);
 		};
 	});
 

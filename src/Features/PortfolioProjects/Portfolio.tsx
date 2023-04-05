@@ -1,4 +1,5 @@
-import { ProjectCard } from '@/src/Components/Card';
+import { Anchor } from '@/src/Components/Anchor';
+import { Card } from '@/src/Components/Card';
 import { IProjects } from '@/src/Components/Card/types';
 import { Heading } from '@/src/Components/Heading';
 import { Paragraph } from '@/src/Components/Paragraph';
@@ -49,10 +50,46 @@ const Portfolio = () => {
 				Portfolio
 			</Heading>
 
-			<div className="mt-4 flex flex-wrap justify-center gap-9">
-				{Projects.map((project) => (
-					<ProjectCard project={project} key={project.id} />
-				))}
+			<div className="mt-4 flex flex-wrap justify-center gap-4">
+				{Projects.map((project) => {
+					return (
+						<Card
+							key={project.id}
+							size={'medium'}
+							className="group gap-4 p-4"
+						>
+							<div className="screen-overlay hidden transition-all duration-1000 group-hover:block" />
+							<Heading className="hidden">{project.name}</Heading>
+							<Anchor
+								href={project.liveDemoLink}
+								className={`h-[280px] w-full bg-cover group-hover:opacity-80 ${project.imagePreview}`}
+							/>
+							<Paragraph size={'base'}>
+								{project.description}
+							</Paragraph>
+							<div className="mb-4 mt-auto">
+								<Anchor
+									variant={'outline'}
+									size={'sm'}
+									href={project.githubLink}
+									target="_blank"
+									className="ml-1"
+								>
+									Github
+								</Anchor>
+								<Anchor
+									variant={'primary'}
+									size={'sm'}
+									href={project.liveDemoLink}
+									target="_blank"
+									className="ml-4"
+								>
+									Live Demo
+								</Anchor>
+							</div>
+						</Card>
+					);
+				})}
 			</div>
 		</SectionWrapper>
 	);

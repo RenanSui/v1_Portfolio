@@ -44,7 +44,7 @@ const Contact = () => {
 			<div className="lg:flex">
 				<div className="my-4 flex flex-wrap justify-center gap-4 transition-all duration-700 lg:mx-5 lg:flex-col">
 					<Anchor href="mailto: renanddtao@gmail.com" target="_blank">
-						<Card variant={'center'} className="gap-1 p-6">
+						<Card variant={'center'} className="gap-1 p-6 md:p-10">
 							<Icon
 								icon={faEnvelope}
 								className="my-3 text-white"
@@ -62,7 +62,7 @@ const Contact = () => {
 						href="https://www.linkedin.com/in/renansui/"
 						target="_blank"
 					>
-						<Card variant={'center'} className="gap-1 p-6">
+						<Card variant={'center'} className="gap-1 p-6 md:p-10">
 							<Icon
 								icon={faLinkedinIn}
 								className="my-3 text-white"
@@ -80,7 +80,7 @@ const Contact = () => {
 						href="https://api.whatsapp.com/send?phone=+5571985035606&text=Hello"
 						target="_blank"
 					>
-						<Card variant={'center'} className="gap-1 p-6">
+						<Card variant={'center'} className="gap-1 p-6 md:p-10">
 							<Icon
 								icon={faEnvelope}
 								className="my-3 text-white"
