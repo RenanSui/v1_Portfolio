@@ -75,12 +75,13 @@ const FloatingNavbar = () => {
 						key={navItem.id}
 						id={String(navItem.id)}
 						title={CapitalizeFirstLetter(navItem.titleName)}
+						className="py-1 xs:py-0"
 					>
 						<Anchor
 							variant={'icon'}
 							size={'icon'}
 							href={navItem.hrefLink}
-							className={` ${
+							className={`${
 								MenuActive === navItem.titleName
 									? 'bg-custom-blue-900'
 									: 'hover:bg-custom-darkBlue-900'
