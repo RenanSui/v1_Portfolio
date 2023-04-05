@@ -49,7 +49,7 @@ const Experience = () => {
 								<Paragraph
 									variant={'gray'}
 									size={'base'}
-									className="ml-6 basis-full"
+									className="ml-6 basis-full font-light"
 								>
 									{stack.level}
 								</Paragraph>
