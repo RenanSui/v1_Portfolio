@@ -41,8 +41,8 @@ const Contact = () => {
 				Contact Me
 			</Heading>
 
-			<div className="lg:flex">
-				<div className="my-4 flex flex-wrap justify-center gap-4 transition-all duration-700 lg:mx-5 lg:flex-col">
+			<div className="my-4 gap-4 lg:flex">
+				<div className="flex flex-wrap justify-center gap-4 transition-all duration-700 lg:flex-col">
 					<Anchor href="mailto: renanddtao@gmail.com" target="_blank">
 						<Card variant={'center'} className="gap-1 p-6 md:p-10">
 							<Icon

@@ -8,7 +8,7 @@ const GroupForm: FC<GroupFormProps> = ({ children, ...props }) => {
 	return (
 		<form
 			{...props}
-			className="relative mx-3 mt-4 flex flex-col items-center gap-4 rounded-md text-custom-gray-100 transition-all duration-700"
+			className="relative flex flex-col items-center gap-4 rounded-md text-custom-gray-100 transition-all duration-700"
 		>
 			{children}
 		</form>
