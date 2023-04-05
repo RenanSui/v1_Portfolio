@@ -62,7 +62,7 @@ const Portfolio = () => {
 							<Heading className="hidden">{project.name}</Heading>
 							<Anchor
 								href={project.liveDemoLink}
-								className={`h-[280px] w-full bg-cover group-hover:opacity-80 ${project.imagePreview}`}
+								className={`h-[320px] w-full bg-cover group-hover:opacity-80 ${project.imagePreview}`}
 							/>
 							<Paragraph size={'base'}>
 								{project.description}

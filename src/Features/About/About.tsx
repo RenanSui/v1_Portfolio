@@ -11,7 +11,7 @@ import { FC } from 'react';
 const About = () => {
 	return (
 		<SectionWrapper
-			className="mt-28 flex cursor-default flex-col items-center justify-center"
+			className="mx-2 mt-28 flex cursor-default flex-col items-center justify-center xs:mx-4"
 			id="about"
 		>
 			<Paragraph variant={'gray'}>Get To Know</Paragraph>
@@ -38,16 +38,16 @@ const About = () => {
 				</div>
 
 				<div className="relative flex flex-col transition-all lg:ml-12 lg:mr-8">
-					<div className="mt-16 flex flex-wrap justify-center gap-4 md:justify-start">
-						<Anchor href="#experience">
+					<div className="mt-16 flex justify-center gap-4 xs:flex-wrap xs:gap-4 md:justify-start">
+						<Anchor href="#experience" className="">
 							<Card
 								variant={'center'}
 								size={'small'}
-								className="CardLeftPixelEffect p-6"
+								className="CardLeftPixelEffect px-3 py-6 xs:px-6 md:p-10"
 							>
 								<Icon
 									icon={faAward}
-									className="h-6 w-6 text-custom-blue-500"
+									className="mb-4 h-6 w-6 text-custom-blue-500"
 								/>
 								<Heading>Experience</Heading>
 								<Paragraph variant={'gray'}>
@@ -55,15 +55,15 @@ const About = () => {
 								</Paragraph>
 							</Card>
 						</Anchor>
-						<Anchor href="#portfolio">
+						<Anchor href="#portfolio" className="">
 							<Card
 								variant={'center'}
 								size={'small'}
-								className="CardLeftPixelEffect p-6"
+								className="CardLeftPixelEffect px-3 py-6 xs:px-6 md:p-10"
 							>
 								<Icon
 									icon={faDesktop}
-									className="h-6 w-6 text-custom-blue-500"
+									className="mb-4 h-6 w-6 text-custom-blue-500"
 								/>
 								<Heading>Projects</Heading>
 								<Paragraph variant={'gray'}>
@@ -76,7 +76,7 @@ const About = () => {
 					<Paragraph
 						variant={'default'}
 						size={'default'}
-						className="group mx-3 my-3 max-w-[35em] text-justify font-light transition-all duration-300 hover:text-custom-blue-400 md:mx-0 md:max-w-[43em] md:text-base"
+						className="group my-3 max-w-[35em] text-justify font-light transition-all duration-300 hover:text-custom-blue-400 md:mx-0 md:max-w-[43em] md:text-base"
 					>
 						Not so recently (2020) I started my self-taught journey
 						studying <Emphasize> frontend </Emphasize> development

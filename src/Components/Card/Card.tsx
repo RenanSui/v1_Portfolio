@@ -16,7 +16,7 @@ const cardVariants = cva(
 			},
 			size: {
 				default: 'w-[300px] xs:w-[380px]',
-				small: 'w-[142px] xs:w-[190px] sm:w-[220px]',
+				small: 'w-[140px] xs:w-[180px] sm:w-[220px]',
 				medium: 'w-[300px] xs:w-[380px]',
 				large: 'max-w-[500px]',
 				// default: 'h-[180px] w-[300px] xs:w-[380px] md:h-[200px]',
