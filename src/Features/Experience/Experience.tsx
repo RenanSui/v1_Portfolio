@@ -16,7 +16,7 @@ const TechStack = [
 
 const Experience = () => {
 	return (
-		<SectionWrapper id="experience" className="mx-2 xs:mx-4">
+		<SectionWrapper id="experience">
 			<Paragraph variant={'gray'}>What Skills I Have</Paragraph>
 			<Heading variant={'primary'} size={'lg'}>
 				My Experience
@@ -25,7 +25,7 @@ const Experience = () => {
 			<Card
 				variant={'center'}
 				size={'large'}
-				className="CardLeftPixelEffect my-4 flex flex-wrap px-16 pb-8"
+				className="CardLeftPixelEffect mx-2 my-4 flex flex-wrap px-16 pb-8"
 			>
 				<Heading
 					variant={'primary'}

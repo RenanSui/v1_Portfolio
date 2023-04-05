@@ -11,7 +11,8 @@ import { FC } from 'react';
 const About = () => {
 	return (
 		<SectionWrapper
-			className="mx-2 mt-28 flex cursor-default flex-col items-center justify-center xs:mx-4"
+			className=""
+			// className="mx-2 mt-28 flex cursor-default flex-col items-center justify-center xs:mx-4"
 			id="about"
 		>
 			<Paragraph variant={'gray'}>Get To Know</Paragraph>
@@ -19,7 +20,7 @@ const About = () => {
 				About Me
 			</Heading>
 
-			<div className="flex flex-col items-center justify-center lg:flex-row">
+			<div className="mx-2 flex flex-col items-center justify-center lg:flex-row">
 				<div className="group relative mt-14 flex justify-center lg:ml-8">
 					<Image
 						src="/Assets/Images/bgpfp2.png"
