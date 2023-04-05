@@ -1,4 +1,3 @@
-import { IFooterContactInfo } from '@/src/Components/Card/types';
 import { Heading } from '@/src/Components/Heading';
 import { SectionWrapper } from '@/src/Components/Wrapper';
 import CapitalizeFirstLetter from '@/src/Utilities/CapitalizeFirstLetter';
@@ -11,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const navList = ['home', 'about', 'experience', 'portfolio', 'contact'];
 
-const contactInfo: IFooterContactInfo[] = [
+const contactInfo = [
 	{
 		id: 1,
 		icon: faGithub,
