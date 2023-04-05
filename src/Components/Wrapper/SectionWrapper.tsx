@@ -1,8 +1,17 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import { SectionWrapperProps } from './types';
+import { FC, useEffect, useRef } from 'react';
 
-const SectionWrapper = ({ children, className, id }: SectionWrapperProps) => {
+export type SectionWrapperProps = {
+	children: string | JSX.Element | JSX.Element[];
+	className?: string;
+	id: string;
+};
+
+const SectionWrapper: FC<SectionWrapperProps> = ({
+	children,
+	className,
+	id,
+}) => {
 	const section = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
