@@ -96,7 +96,7 @@ const Contact = () => {
 					</Anchor>
 				</div>
 
-				<GroupForm onSubmit={handleSubmit}>
+				<GroupForm onSubmit={handleSubmit} className="mt-4">
 					<FormField>
 						<Input type="name" actionType="changeName" />
 						<Label htmlFor="name">Your Full Name</Label>

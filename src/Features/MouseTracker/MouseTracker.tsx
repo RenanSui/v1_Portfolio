@@ -50,7 +50,8 @@ const MouseTracker = () => {
 
 	return (
 		<div
-			className=" pointer-events-none fixed -left-1/2 -top-1/2 z-[999] aspect-[1] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00a2ff] mix-blend-difference transition-all duration-300"
+			// bg-[#00a2ff]
+			className=" pointer-events-none fixed -left-1/2 -top-1/2 z-[999] aspect-[1] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#07343e] mix-blend-difference blur-sm transition-all duration-300"
 			ref={refContainer}
 		/>
 	);

@@ -10,6 +10,8 @@ const anchorVariants = cva(
 				default: '',
 				primary:
 					'bg-custom-blue-500 text-black hover:bg-custom-blue-800 hover:text-white rounded-md',
+				secondary:
+					'bg-custom-darkBlue-900 text-black hover:bg-custom-blue-900 hover:text-white rounded-xl',
 				outline:
 					'bg-transparent border text-custom-blue-300 border-custom-blue-300 hover:bg-custom-blue-800 hover:text-white hover:border-custom-blue-800 rounded-md',
 				icon: 'rounded-full transition-all duration-500',
