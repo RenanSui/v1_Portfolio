@@ -39,11 +39,11 @@ const About = () => {
 
 				<div className="relative flex flex-col transition-all lg:ml-12 lg:mr-8">
 					<div className="mt-16 flex justify-center gap-4 xs:flex-wrap xs:gap-4 md:justify-start">
-						<Anchor href="#experience" className="">
+						<Anchor href="#experience">
 							<Card
 								variant={'center'}
 								size={'small'}
-								className="CardLeftPixelEffect px-3 py-6 xs:px-6 md:p-10"
+								className="CardLeftPixelEffect px-2 py-6 xs:px-6 md:p-10"
 							>
 								<Icon
 									icon={faAward}
@@ -55,11 +55,11 @@ const About = () => {
 								</Paragraph>
 							</Card>
 						</Anchor>
-						<Anchor href="#portfolio" className="">
+						<Anchor href="#portfolio">
 							<Card
 								variant={'center'}
 								size={'small'}
-								className="CardLeftPixelEffect px-3 py-6 xs:px-6 md:p-10"
+								className="CardLeftPixelEffect px-2 py-6 xs:px-6 md:p-10"
 							>
 								<Icon
 									icon={faDesktop}

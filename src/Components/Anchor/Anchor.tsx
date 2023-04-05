@@ -12,11 +12,13 @@ const anchorVariants = cva(
 					'bg-custom-blue-500 text-black hover:bg-custom-blue-800 hover:text-white rounded-md',
 				outline:
 					'bg-transparent border text-custom-blue-300 border-custom-blue-300 hover:bg-custom-blue-800 hover:text-white hover:border-custom-blue-800 rounded-md',
+				icon: 'rounded-full transition-all duration-500',
 			},
 			size: {
 				default: '',
 				sm: 'px-5 py-3',
 				md: 'px-6 py-5',
+				icon: 'px-3 py-2 xs:px-4 xs:py-3',
 			},
 		},
 		defaultVariants: {

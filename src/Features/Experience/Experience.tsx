@@ -25,7 +25,7 @@ const Experience = () => {
 			<Card
 				variant={'center'}
 				size={'large'}
-				className=" flex flex-wrap px-16 pb-8"
+				className="CardLeftPixelEffect my-4 flex flex-wrap px-16 pb-8"
 			>
 				<Heading
 					variant={'primary'}
