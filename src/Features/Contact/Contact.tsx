@@ -25,6 +25,7 @@ const Contact = () => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
+		('aoba');
 		SendEmail(contactState);
 		dispatch({ type: 'resetForm' });
 
