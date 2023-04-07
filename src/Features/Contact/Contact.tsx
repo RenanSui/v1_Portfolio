@@ -37,7 +37,7 @@ const Contact = () => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isSubmitting, isSubmitted },
+		formState: { errors, isSubmitting, isSubmitSuccessful },
 		watch,
 		reset,
 	} = useForm<MessageData>({ resolver: zodResolver(messageSchema) });
@@ -179,7 +179,7 @@ const Contact = () => {
 					</Button>
 				</GroupForm>
 
-				{isSubmitted && <Alert>Message Sended</Alert>}
+				{isSubmitSuccessful ? <Alert>Message Sended</Alert> : ''}
 			</div>
 		</SectionWrapper>
 	);
