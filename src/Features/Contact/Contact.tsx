@@ -27,10 +27,10 @@ const messageSchema = z.object({
 		.string()
 		.nonempty('Name is required')
 		.toLowerCase()
-		.min(2)
+		.min(2, 'Name must contain at least 2 character(s).')
 		.transform((name) => CapitalizeWords(name)),
-	email: z.string().nonempty('Email is required').email().toLowerCase(),
-	message: z.string().nonempty('Message is required'),
+	email: z.string().nonempty('Email is required.').email().toLowerCase(),
+	message: z.string().nonempty('Message is required.'),
 });
 
 const Contact = () => {
