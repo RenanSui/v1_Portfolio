@@ -1,7 +1,7 @@
 import { About } from '@/src/Features/About';
 import { Contact } from '@/src/Features/Contact';
 import { Experience } from '@/src/Features/Experience';
-import { Portfolio } from '@/src/Features/PortfolioProjects';
+import { Portfolio } from '@/src/Features/Portfolio';
 
 // import { Services } from '../MyServices';
 // import { Testimonials } from '../Testimonials';

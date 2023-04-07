@@ -20,7 +20,7 @@ const About = () => {
 				About Me
 			</Heading>
 
-			<div className="mx-4 flex flex-col items-center justify-center lg:flex-row">
+			<div className="mx-2 flex flex-col items-center justify-center xs:mx-4 lg:flex-row">
 				<div className="group relative mt-14 flex justify-center lg:ml-8">
 					<Image
 						src="/Assets/Images/bgpfp2.png"
