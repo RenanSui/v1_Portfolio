@@ -1,4 +1,3 @@
-import ContactProvider from '@/src/Contexts/Contact/ContactProvider';
 import { About } from '@/src/Features/About';
 import { Contact } from '@/src/Features/Contact';
 import { Experience } from '@/src/Features/Experience';
@@ -13,9 +12,7 @@ const Main = () => {
 			<About />
 			<Experience />
 			<Portfolio />
-			<ContactProvider>
-				<Contact />
-			</ContactProvider>
+			<Contact />
 		</main>
 	);
 };

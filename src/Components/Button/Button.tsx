@@ -30,6 +30,7 @@ interface ButtonProps
 		VariantProps<typeof buttonVariants> {
 	children?: string | JSX.Element | JSX.Element[];
 	type?: 'button' | 'submit' | 'reset' | undefined;
+	disabled: boolean;
 }
 
 const Button: FC<ButtonProps> = ({

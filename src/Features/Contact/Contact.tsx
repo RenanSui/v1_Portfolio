@@ -11,28 +11,43 @@ import { Label } from '@/src/Components/Label';
 import { Paragraph } from '@/src/Components/Paragraph';
 import { TextArea } from '@/src/Components/Textarea';
 import { SectionWrapper } from '@/src/Components/Wrapper';
-import { ContactContext } from '@/src/Contexts/Contact/ContactContext';
+import CapitalizeWords from '@/src/Utilities/CapitalizeWords';
 import { SendEmail } from '@/src/Utilities/SendEmail';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { useContext, useState } from 'react';
-import { MessageSendAlert } from '../Alert';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { Alert } from '../Alert';
+
+export type MessageData = z.infer<typeof messageSchema>;
+
+const messageSchema = z.object({
+	fullName: z
+		.string()
+		.nonempty('Name is required')
+		.toLowerCase()
+		.min(2)
+		.transform((name) => CapitalizeWords(name)),
+	email: z.string().nonempty('Email is required').email().toLowerCase(),
+	message: z.string().nonempty('Message is required'),
+});
 
 const Contact = () => {
-	const [isSended, setIsSended] = useState(false);
-	const { contactState, dispatch } = useContext(ContactContext);
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting, isSubmitted },
+		watch,
+		reset,
+	} = useForm<MessageData>({ resolver: zodResolver(messageSchema) });
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
+	const handleSendEmail = (data: MessageData) => {
+		SendEmail(data);
 
-		('aoba');
-		SendEmail(contactState);
-		dispatch({ type: 'resetForm' });
-
-		setIsSended(true);
 		setTimeout(() => {
-			setIsSended(false);
-		}, 3000);
+			reset({ fullName: '', email: '', message: '' });
+		}, 3 * 1000);
 	};
 
 	return (
@@ -97,26 +112,74 @@ const Contact = () => {
 					</Anchor>
 				</div>
 
-				<GroupForm onSubmit={handleSubmit} className="mt-4">
-					<FormField>
-						<Input type="name" actionType="changeName" />
-						<Label htmlFor="name">Your Full Name</Label>
-					</FormField>
-					<FormField>
-						<Input type="email" actionType="changeEmail" />
-						<Label htmlFor="email">Your Email</Label>
-					</FormField>
-					<FormField>
-						<TextArea type="message" actionType="changeMessage" />
-						<Label htmlFor="message">Your Message</Label>
+				<GroupForm
+					onSubmit={handleSubmit(handleSendEmail)}
+					className="mt-4"
+				>
+					<FormField className="flex flex-col gap-2">
+						<Input
+							type="string"
+							{...register('fullName')}
+							disabled={isSubmitting}
+						/>
+						<Label htmlFor="name" watchValue={watch('fullName')}>
+							Your Full Name
+						</Label>
+						{errors.fullName?.message ? (
+							<Paragraph className="ml-2">
+								{errors.fullName?.message}
+							</Paragraph>
+						) : (
+							''
+						)}
 					</FormField>
 
-					<Button variant={'primary'} type="submit">
+					<FormField className="flex flex-col gap-2">
+						<Input
+							type="string"
+							{...register('email')}
+							disabled={isSubmitting}
+						/>
+						<Label htmlFor="email" watchValue={watch('email')}>
+							Your Email
+						</Label>
+						{errors.email?.message ? (
+							<Paragraph className="ml-2">
+								{errors.email?.message}
+							</Paragraph>
+						) : (
+							''
+						)}
+					</FormField>
+
+					<FormField className="flex flex-col gap-2">
+						<TextArea
+							type="string"
+							{...register('message')}
+							disabled={isSubmitting}
+						/>
+						<Label htmlFor="message" watchValue={watch('message')}>
+							Your Message
+						</Label>
+						{errors.message?.message ? (
+							<Paragraph className="ml-2">
+								{errors.message?.message}
+							</Paragraph>
+						) : (
+							''
+						)}
+					</FormField>
+
+					<Button
+						variant={'primary'}
+						type="submit"
+						disabled={isSubmitting}
+					>
 						Send Message
 					</Button>
 				</GroupForm>
 
-				{isSended && <MessageSendAlert />}
+				{isSubmitted && <Alert>Message Sended</Alert>}
 			</div>
 		</SectionWrapper>
 	);
