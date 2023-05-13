@@ -90,19 +90,18 @@ const Portfolio = () => {
 					);
 				})}
 
-				{/* https://renansui-projects.vercel.app */}
 				<article className="flex w-full flex-col items-center gap-2 pt-8">
-					<Paragraph variant={'primary'} size={'lg'}>
+					<Paragraph variant={'primary'} className="text-4xl">
 						See More Projects
 					</Paragraph>
-					<a
+					<Anchor
+						variant={'primary'}
+						size={'sm'}
 						href="https://renansui-projects.vercel.app"
 						target="_blank"
 					>
-						<Paragraph size={'base'}>
-							[ All Projects Collection ]
-						</Paragraph>
-					</a>
+						All Projects Collection
+					</Anchor>
 				</article>
 			</div>
 		</SectionWrapper>
