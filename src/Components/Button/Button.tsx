@@ -2,7 +2,7 @@ import { mergeClass } from '@/src/Utilities/mergeClass';
 import { VariantProps, cva } from 'class-variance-authority';
 import { FC } from 'react';
 
-const buttonVariants = cva(
+const ButtonVariants = cva(
 	'relative transition-all duration-300 z-10 rounded-md',
 	{
 		variants: {
@@ -27,7 +27,7 @@ const buttonVariants = cva(
 
 interface ButtonProps
 	extends React.HTMLAttributes<HTMLButtonElement>,
-		VariantProps<typeof buttonVariants> {
+		VariantProps<typeof ButtonVariants> {
 	children?: string | JSX.Element | JSX.Element[];
 	type?: 'button' | 'submit' | 'reset' | undefined;
 	disabled: boolean;
@@ -43,11 +43,11 @@ const Button: FC<ButtonProps> = ({
 	return (
 		<button
 			{...props}
-			className={mergeClass(buttonVariants({ variant, size, className }))}
+			className={mergeClass(ButtonVariants({ variant, size, className }))}
 		>
 			{children}
 		</button>
 	);
 };
 
-export { Button, buttonVariants };
+export { Button, ButtonVariants };

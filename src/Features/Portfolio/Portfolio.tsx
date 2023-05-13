@@ -43,7 +43,7 @@ const Projects = [
 
 const Portfolio = () => {
 	return (
-		<SectionWrapper id="portfolio">
+		<SectionWrapper id="portfolio" className="">
 			<Paragraph variant={'gray'}>My Recent Work</Paragraph>
 			<Heading variant={'primary'} size={'lg'}>
 				Portfolio
@@ -89,6 +89,21 @@ const Portfolio = () => {
 						</Card>
 					);
 				})}
+
+				{/* https://renansui-projects.vercel.app */}
+				<article className="flex w-full flex-col items-center gap-2 pt-8">
+					<Paragraph variant={'primary'} size={'lg'}>
+						See More Projects
+					</Paragraph>
+					<a
+						href="https://renansui-projects.vercel.app"
+						target="_blank"
+					>
+						<Paragraph size={'base'}>
+							[ All Projects Collection ]
+						</Paragraph>
+					</a>
+				</article>
 			</div>
 		</SectionWrapper>
 	);
